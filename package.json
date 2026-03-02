@@ -11,6 +11,7 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "@azure/monitor-opentelemetry": "^1.16.0",
     "@azure/storage-blob": "^12.31.0",
     "applicationinsights": "^3.14.0",
     "dotenv": "^17.3.1",

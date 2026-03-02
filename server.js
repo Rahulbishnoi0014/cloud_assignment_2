@@ -37,6 +37,12 @@ const containerClient = blobServiceClient.getContainerClient(
 
 const appInsights = require("applicationinsights");
 
+// Import the `useAzureMonitor()` function from the `@azure/monitor-opentelemetry` package.
+const { useAzureMonitor } = require("@azure/monitor-opentelemetry");
+
+// Call the `useAzureMonitor()` function to configure OpenTelemetry to use Azure Monitor.
+useAzureMonitor();
+
 appInsights.setup(process.env.APPLICATIONINSIGHTS_CONNECTION_STRING)
   .setAutoCollectRequests(true)
   .setAutoCollectPerformance(true)
@@ -45,7 +51,7 @@ appInsights.setup(process.env.APPLICATIONINSIGHTS_CONNECTION_STRING)
   .setAutoCollectConsole(true)
   .start();
 
-  
+
 
 // Home route - list products
 app.get("/", async (req, res) => {
