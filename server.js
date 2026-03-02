@@ -44,6 +44,8 @@ app.get("/", async (req, res) => {
   }
 });
 
+
+
 // Add product form
 app.get("/add", (req, res) => {
   res.render("add", { error: null });
