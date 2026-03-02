@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product List</title>
+</head>
+<body>
+    <h1>Products</h1>
+    <a href="/add">Add Product</a>
+    <hr>
+
+    <% products.forEach(product => { %>
+        <div>
+            <h3><%= product.name %></h3>
+            <p>Price: ₹<%= product.price %></p>
+            <p><%= product.description %></p>
+            <img src="<%= product.image_url %>" width="200"/>
+            <hr>
+        </div>
+    <% }) %>
+</body>
+</html>
