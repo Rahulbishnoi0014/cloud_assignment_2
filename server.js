@@ -45,6 +45,8 @@ appInsights.setup(process.env.APPLICATIONINSIGHTS_CONNECTION_STRING)
   .setAutoCollectConsole(true)
   .start();
 
+  
+
 // Home route - list products
 app.get("/", async (req, res) => {
   try {
