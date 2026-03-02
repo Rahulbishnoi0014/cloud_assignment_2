@@ -33,6 +33,18 @@ const containerClient = blobServiceClient.getContainerClient(
   process.env.AZURE_CONTAINER_NAME
 );
 
+
+
+const appInsights = require("applicationinsights");
+
+appInsights.setup(process.env.APPLICATIONINSIGHTS_CONNECTION_STRING)
+  .setAutoCollectRequests(true)
+  .setAutoCollectPerformance(true)
+  .setAutoCollectExceptions(true)
+  .setAutoCollectDependencies(true)
+  .setAutoCollectConsole(true)
+  .start();
+
 // Home route - list products
 app.get("/", async (req, res) => {
   try {
