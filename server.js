@@ -108,7 +108,8 @@ app.post("/add", upload.single("image"), async (req, res) => {
 
         res.redirect("/");
     } catch (err) {
-        res.send("Error adding product");
+        console.error("ADD PRODUCT ERROR:", err);
+        res.send("Error: " + err.message + " | Stack: " + err.stack);
     }
 });
 
